@@ -1,6 +1,14 @@
 <?php 
     $result = ' None ' ;
- ?> 
+     if ( array_key_exists ( ' act ' , $_POST )) {
+         $result = omikuji();
+    }
+
+    function  omikuji () {
+         $fortune = [ " Great luck " , " Good luck " , " Medium luck " , " Small luck " , " Bad luck " , " Unlucky " ];
+         return  $fortune [random_int( 0 , count ( $fortune ) - 1 )];
+    }
+?> 
 <!DOCTYPE html> 
 <html  lang = " ja " > 
     <head> 
